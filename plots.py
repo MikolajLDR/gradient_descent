@@ -3,10 +3,7 @@ import numpy as np
 import math
 
 
-def plot(x: list[float], x_points: list[float], save: bool = False):
-    # the function, which is y = 2^2+10-10cos(2πx)
-    y = x**2+10-10*np.cos(2*math.pi*x)
-
+def plot(x: list[float], x_points: list[float], function, save: bool = False):
     # setting the axes at the centre
     fig = plt.figure()
     ax = fig.add_subplot(1, 1, 1)
@@ -18,7 +15,7 @@ def plot(x: list[float], x_points: list[float], save: bool = False):
     ax.yaxis.set_ticks_position('left')
 
     # plot the function
-    plt.plot(x, y, 'y', label='y=2^2+10-10cos(2πx)')
+    plt.plot(x, function, 'y', label='y=2^2+10-10cos(2πx)')
 
     ax.plot(x_points[0], x_points[0]**2+10-10*np.cos(2*math.pi*x_points[0]), 'o-', color='red')
     for x in x_points[1:]:

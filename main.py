@@ -13,5 +13,6 @@ if __name__ == '__main__':
 
     x_points = find_minimum(function_g, starting_x, learn_rate)
     plot_x = np.linspace(-1/2, 1/2, 200)
+    function = plot_x**2+10-10*np.cos(2*math.pi*plot_x)
     
-    plot(plot_x, x_points)
+    plot(plot_x, x_points, function)
