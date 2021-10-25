@@ -4,9 +4,9 @@ import math
 
 def trunkate(number: float) -> float:
     '''
-    Cut off decimal part after two decimal digits
+    Cut off decimal part after four decimal digits
     '''
-    return int(number*100)/100
+    return int(number*10000)/10000
 
 
 def find_minimum(function_gradient, cur_x, rate) -> list[float]:
@@ -23,10 +23,10 @@ def find_minimum(function_gradient, cur_x, rate) -> list[float]:
             break
         i += 1
         print(f'Iteration {i}')
-        print(f'x = {cur_x:.2f}\n')
+        print(f'x = {cur_x:.4f}\n')
         x_points.append(cur_x)
 
-    print(f'Local min = {cur_x:.2f}')
+    print(f'Local min = {cur_x:.4f}')
     return x_points
 
 
@@ -46,10 +46,10 @@ def find_minimum_vector(function_gradient, cur_x1, cur_x2, rate):
             break
         i += 1
         print(f'Iteration {i}')
-        print(f'x = ({cur_x1:.2f}, {cur_x2:.2f})\n')
+        print(f'x = ({cur_x1:.4f}, {cur_x2:.4f})\n')
         x_y_points.append((cur_x1, cur_x2))
 
-    print(f'Local min = ({cur_x1:.2f}, {cur_x2:.2f})')
+    print(f'Local min = ({cur_x1:.4f}, {cur_x2:.4f})')
     return x_y_points
 
 
